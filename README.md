@@ -1,59 +1,133 @@
-# ShalachFoundationWebsite
+# Shalach Global Empowerment Foundation
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+**Bringing Hope,  
+Changing Lives**
 
-## Development server
+A modern single-page application built with Angular that leverages robust routing, lazy loading, and dynamic component rendering for a seamless user experience. This project demonstrates best practices for creating scalable, high-performance web applications using Angular’s SPA functionalities.
 
-To start a local development server, run:
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Vision & Mission](#vision--mission)
+- [Technical Description](#technical-description)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Development Guidelines](#development-guidelines)
+- [Contributing](#contributing)
+
+---
+
+## Overview
+
+The **Shalach Global Empowerment Foundation** website is developed to educate individuals and communities about disease prevention and improve access to essential healthcare services—regardless of socioeconomic status. Our platform aims to reduce health inequality and promote health equity through targeted needs assessments and sustainable frameworks in underserved communities worldwide.
+
+---
+
+## Vision & Mission
+
+### Vision
+We envision a world where individuals and communities can be educated about disease prevention and easily access essential healthcare services, regardless of socioeconomic status.
+
+### Mission
+To reduce health inequality and promote health equity and well-being through targeted needs assessments and sustainable frameworks in underserved communities worldwide.
+
+### Sub-Statement
+Reduce health inequality and promote health equity and well-being through targeted needs assessments.
+
+---
+
+## Technical Description
+
+This project is a modern single-page application (SPA) built with Angular. Key technical highlights include:
+
+- **Robust Routing**: Seamless navigation between different views using Angular’s powerful Router module.
+- **Lazy Loading**: Optimized performance through lazy loading of modules and components.
+- **Dynamic Component Rendering**: Efficient rendering that updates dynamically based on user interaction.
+- **Scalable Architecture**: Demonstrates best practices for building scalable and high-performance web applications using Angular’s SPA functionalities.
+
+---
+
+## Getting Started
+
+To set up and run the project locally, follow these steps:
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/yourusername/shalach-global-empowerment-foundation.git
+   cd shalach-global-empowerment-foundation
+   ```
+
+2. **Install Dependencies**
+
+Ensure you have [Node.js](https://nodejs.org/) and [Angular CLI](https://angular.io/cli) installed, then run:
 
 ```bash
-ng serve
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. **Run the Development Server**
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Start the application using:
 
 ```bash
-ng generate component component-name
+npm serve
 ```
+The app will be available at http://localhost:4200
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+4. **Build for Production**
+
+To build the application for production, run:
 
 ```bash
-ng generate --help
+ng build --prod
 ```
+---
 
-## Building
+## Project Structure
 
-To build the project run:
+An overview of the project structure:
 
-```bash
-ng build
-```
+├── src
+│   ├── app
+│   │   ├── components      # Reusable UI components
+│   │   ├── services        # Application services & APIs
+│   │   ├── modules         # Feature modules (lazy loaded)
+│   │   ├── app-routing.module.ts  # Routing configuration
+│   │   └── app.module.ts   # Root module
+│   ├── assets              # Images, styles, and static files
+│   └── index.html          # Main HTML file
+├── README.md
+└── package.json
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Development Guidelines
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+For future developers:
 
-```bash
-ng test
-```
+- Coding Standards: Follow Angular's style guide and maintain modular, well-documented code.
 
-## Running end-to-end tests
+- Routing: Organize routes in feature modules and use lazy loading for performance.
 
-For end-to-end (e2e) testing, run:
+- Component Communication: User Angular's input/out bindings and services.
 
-```bash
-ng e2e
-```
+- Version Control: Commit clear messages and use feature branches.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Documentation: Update the README and code comments regularly
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Contributing
+
+We welcome contributions! To contribute:
+
+1. Fork the repository
+
+2. Create a new branch for your feature or fix.
+
+3. Commit your changes with clear messages.
+
+4. Open a pull request for review.
