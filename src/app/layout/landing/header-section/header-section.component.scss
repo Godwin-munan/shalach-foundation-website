@@ -1,0 +1,127 @@
+
+#header {
+position: relative;
+}
+
+.main-header-container {
+  height: 100vh;
+}
+
+.vector-image-container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 200px; 
+  margin-top: 5px;
+  z-index: 1;
+}
+
+.vector-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 16rem;
+  background-image: url('/images/min/Vector_min.png');
+  background-size: 221px 100px;
+  background-repeat: repeat-y;
+  mask-image: linear-gradient(to left, black, transparent);
+  -webkit-mask-image: linear-gradient(to left, black, transparent);
+}
+
+.sub-header-container{
+  padding-top: 35px;
+  //border-top: 35px solid transparent;
+}
+
+/* Flex container for header */
+.header-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1210px; /* Adjust based on your design */
+  margin: 0px auto;
+  padding: 0 20px;
+  z-index: 2
+}
+
+/* Logo styling */
+.logo img {
+  height: 50px; /* Adjust based on your logo's size */
+}
+
+/* Navigation items styling */
+.nav-items ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-items li {
+  margin: 0 15px;
+}
+
+.nav-items a {
+  text-decoration: none;
+}
+
+/* Add bottom border on hover */
+.nav-items a:hover {
+  border-bottom: 3.5px solid var(--button-background-color); /* Solid black bottom border */
+}
+
+/* Change text color for active link */
+.nav-items a:active {
+  color: var(--button-background-color);
+  border-bottom: none;
+}
+
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Positions dropdown directly below the parent */
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  width: 200px; /* Adjust width as needed */
+}
+
+.dropdown-menu a {
+  padding: 10px 15px;
+  color: #333;
+  display: block;
+}
+
+/* Show dropdown when parent li is focused */
+.nav-items li:focus-within > .dropdown-menu {
+  display: block;
+}
+
+/* Optional: Change link color on hover */
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* Call-to-action button styling */
+.cta-button button {
+  padding: 10px 20px;
+  width: 148px;
+  font-size: 20px;
+  height: inherit;
+  background-color: var(--button-background-color); /* Adjust based on your design */
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
