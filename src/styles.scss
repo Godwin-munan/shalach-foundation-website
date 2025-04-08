@@ -1,2 +1,178 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "tailwindcss";
+// @use "tailwindcss" as *;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*
+ENTITIES
+Period - &#46;
+comma - &#44;
+question mark - &#63;
+*/
+
+:root {
+
+  --theme-color-1: #9A8F97;
+  --theme-color-2: #E9E3E5;
+  --theme-color-3: #2D2B2C;
+  --theme-color-4: #9A8F97;
+  --theme-separator-color:#F6F7F9;
+  --hyperlinks-text-color: #121212;
+  --hyperlinks-text-hover-color: #121212;
+  --hyperlinks-underline: ;
+  --highlight-text-color: #FFFFFF;
+  --highlight-background-color: #121212;
+  --rkpi-font-size: 100%;
+  --button-border-radius: 2px;
+  --subtitle-color: #121212;
+  --subtitle-font: 'Montserrat';
+  --subtitle-style: 600;
+  --subtitle-size: 32px;
+  --subtitle-mobile-size: 24px;
+  --subtitle-margin-bottom: 12px;
+  --subtitle-h3-size: 24px;
+
+
+  /*
+  *
+  * 
+  *
+  Shalach specific 
+  *
+  *
+  *
+  */
+
+  --outfit-font: 'Outfit';
+  --roboto-font: 'Roboto';
+
+
+  /***** Heading one specific *****/
+  --title-color: #121212;
+  --title-font: 'Outfit';
+  --title-weight: 700;
+  --title-size: 81px;
+  --title-medium-size: 64px;
+  // --title-mobile-size: 48px;
+  --title-mobile-size: 34px;
+
+  /***** Heading one specific *****/
+  --nav-text-color: #0D2B46;
+  --nav-margin-bottom-hover-color: #0360D9;
+  --nav-active-color:#0360D9;
+
+  --button-background-color: #0360D9;
+  --button-background-hover-color: #EEEEEE;
+  --button-text-color: #FFFFFF;
+
+
+  /***** Paragraph specific *****/
+  --paragraph-header-color: #163048;
+  --paragraph-white-color: #FFFFFF;
+  --paragraph-black-color: #000000;
+  --paragraph-font: 'Montserrat';
+  --paragraph-style: 400;
+  --paragraph-size: 18px;
+  --paragraph-mobile-size: 16px;
+  --paragraph-margin-bottom: 12px;
+
+
+}
+
+body {
+  font-family: var(--roboto-font), var(--outfit-font), "sans-serif";
+
+  h1 {
+    font-family: var(--outfit-font);
+    color: var(--title-color);
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
+  }
+
+  h2 {
+    color: var(--subtitle-color);
+    font-size: var(--subtitle-size);
+    font-weight: var(--subtitle-style);
+    margin-bottom: var(--subtitle-margin-bottom);
+  }
+
+  h3 {
+    font-size: var(--subtitle-h3-size);
+  }
+
+  p {
+    color: #163048;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  nav {
+    font-family: var(--outfit-font);
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+@layer base {
+
+  @screen sm {
+    body {
+      //@apply text-lg font-bold;
+
+      h1 {
+        font-size: var(--title-mobile-size);
+      }
+
+      h2 {
+        font-size: var(--subtitle-mobile-size);
+      }
+
+      p {
+        font-size: var(--paragraph-mobile-size);
+      }
+
+    }
+  }
+
+  @screen md {
+    body {
+      
+    }
+  }
+}
+
+
+
+.container-custom {
+  width: 98%;
+  margin: 0 auto;
+  //padding: 0 1rem; /* adjust as needed */
+}
+
+.section-subtle-gray {
+  background-color: var(--theme-separator-color);
+}
+
+.section-main {
+  //font-family: var(--title-font);
+  //font-weight: var(--title-style);
+  font-size: var(--title-size);
+  color: var(--title-color);
+}
+
+.highlight-text {
+  background-color: var(--highlight-background-color);
+  color: var(--highlight-text-color);
+}
+
+.subtitle-color {
+  color: var(--subtitle-color);
+}
+
+#vision {
+  background-color: var(--theme-color-3);
+}
