@@ -28,13 +28,6 @@ question mark - &#63;
   --highlight-background-color: #121212;
   --rkpi-font-size: 100%;
   --button-border-radius: 2px;
-  --subtitle-color: #121212;
-  --subtitle-font: 'Montserrat';
-  --subtitle-style: 600;
-  --subtitle-size: 32px;
-  --subtitle-mobile-size: 24px;
-  --subtitle-margin-bottom: 12px;
-  --subtitle-h3-size: 24px;
 
 
   /*
@@ -49,6 +42,32 @@ question mark - &#63;
 
   --outfit-font: 'Outfit';
   --roboto-font: 'Roboto';
+  --app-primary-color: #2AAAAB;
+  --app-white-background-color: #FFFFFF;
+  --app-purple-color: #542BC9;
+  --app-white-color: #FFFFFF;
+  --app-black-color: #000000;
+  --app-vision-card-background-color: #542BC9;
+  --container-centered: 0px auto;
+  --header-container-width: 1210px;
+  --header-medium-container-width: 1210px;
+  --header-mobile-container-width: 1210px;
+
+  --subtitle-color: #FFFFFF;
+  --subtitle-font: 'Outfit';
+  --subtitle-weight: 700;
+  --subtitle-size: 40px;
+  --subtitle-mobile-size: 24px;
+  --subtitle-margin-bottom: 12px;
+
+
+  --content-title-container: 700px;
+  --content-medium-title-container: 900px;
+  --content-mobile-title-container: 900px;
+  --content-title-subtitle-container: 450px;
+  --content-medium-title-subtitle-container: 450px;
+  --content-mobile-title-subtitle-container: 450px;
+
 
 
   /***** Heading one specific *****/
@@ -74,7 +93,7 @@ question mark - &#63;
   --paragraph-header-color: #163048;
   --paragraph-white-color: #FFFFFF;
   --paragraph-black-color: #000000;
-  --paragraph-font: 'Montserrat';
+  --paragraph-font: 'Roboto';
   --paragraph-style: 400;
   --paragraph-size: 18px;
   --paragraph-mobile-size: 16px;
@@ -88,6 +107,7 @@ body {
 
   h1 {
     font-family: var(--outfit-font);
+    line-height: 100px;
     color: var(--title-color);
     font-size: var(--title-size);
     font-weight: var(--title-weight);
@@ -96,8 +116,7 @@ body {
   h2 {
     color: var(--subtitle-color);
     font-size: var(--subtitle-size);
-    font-weight: var(--subtitle-style);
-    margin-bottom: var(--subtitle-margin-bottom);
+    font-weight: var(--subtitle-weight);
   }
 
   h3 {
@@ -173,6 +192,3 @@ body {
   color: var(--subtitle-color);
 }
 
-#vision {
-  background-color: var(--theme-color-3);
-}
