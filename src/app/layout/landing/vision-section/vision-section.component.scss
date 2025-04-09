@@ -1,0 +1,106 @@
+
+.main-vision-container {
+  background-color: var(--app-white-background-color);
+}
+.vision-header-container {
+  background-color: var(--app-primary-color);
+  height: 97px;
+  margin: 0 0 50px 0;
+}
+
+.vision-header-container h2 {
+  margin-left: 150px;
+  padding-top: 30px;
+}
+
+.vision-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vision-card-left-container,
+.vision-card-right-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 370px;
+  border-radius: 13px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--app-white-background-color);
+  padding: 50px 30px;
+}
+
+.vision-card-right-container{
+  margin-right: 300px;
+  background-color: var(--app-white-background-color);
+  color: var(--app-purple-color);
+}
+
+.vision-card-left-container {
+  margin-left: 300px;
+  background-color: var(--app-vision-card-background-color);
+  color: var(--app-white-color);
+}
+
+.vision-icon-container {
+  position: relative;   /* Establishes a positioning context */
+  width: 80px;         /* Adjust dimensions as needed */
+  height: 80px;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;     /* Centers content vertically */
+  margin-bottom: 10px;
+}
+
+// .vision-icon-right-background {
+//   background-color: var(--app-vision-card-background-color);
+// }
+
+// .vision-icon-left-background {
+//   background-color: var(--app-white-background-color);
+// }
+
+
+.background-left-circle,
+.background-right-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;       /* Makes it circular */
+  object-fit: cover;        /* Ensures image covers the area nicely */
+}
+
+
+.inner-left-circle,
+.inner-right-circle {
+  width: 50%;               /* Adjust the size of the inner circle as desired */
+  height: 50%;
+  border-radius: 50%;       /* Makes it circular */
+  object-fit: cover;
+  position: absolute;       /* Optional if you want it to float above */
+}
+
+
+.vision-title-container h3 {
+  font-family: var(--subtitle-font);
+  font-weight: 600;
+  font-size: 28px;
+  padding-bottom: 10px;
+}
+
+.vision-paragraph-left-container p,
+.vision-paragraph-right-container p{
+  font-family: var(--paragraph-font);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.vision-paragraph-left-container p {
+  color: var(--app-white-color);
+}
+
+.vision-paragraph-right-container p {
+  color: var(--app-black-color);
+}
+
+
