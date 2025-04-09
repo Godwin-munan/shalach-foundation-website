@@ -1,4 +1,4 @@
-<header id="header" class="main-header-container">
+<header id="header" class="main-header-container" [style.height]="headerHeight">
   <!-- Vector background image container -->
   <div class="vector-image-container">
     <div class="vector-image"></div>
@@ -6,7 +6,7 @@
 
   <!-- sub header container -->
   <div class="sub-header-container">
-    <div class="header-container">
+    <div class="header-nav-container">
       <!-- Logo on the left -->
       <div class="logo">
         <img src="/logo/Group 14  - shalach logo.png" alt="shalach foundation logo">
@@ -17,10 +17,9 @@
         <ul>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" (click)="toggleDropdown($event)">About us</a>
-            <ul class="dropdown-menu" *ngIf="isDropdownOpen">
+            <ul class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
+              <li><a href="#">Overview</a></li>
               <li><a href="#">Our Team</a></li>
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">Careers</a></li>
             </ul>
           </li>
           <li><a href="#">Our Work</a></li>
@@ -37,7 +36,36 @@
     </div>
   </div>
 
-  <div>
-    HELLO WORLD
+  <div class="sub-header-content-container">
+
+    <!-- Header content text section -->
+    <div class="header-content-title-container">
+      <div class="header-content-title-maintitle-container">
+        <h1>
+          Bringing Hope, Changing Lives
+        </h1>
+      </div>
+      <div class="header-content-title-subtitle-container">
+        <p>
+          Reduce health inequality and promote health equity and well-being through targeted needs assessments
+        </p>
+      </div>
+    </div>
+
+    <!-- Header content image section - images are stacked over each other in a eclipse like structure -->
+    <div class="header-content-image-container">
+      <div class="elipse-top-center-image-container">
+        <img src="/images/min/Ellipse 3 - image of a child and sibling_min.png" alt="image of a young boy with his sibling">
+      </div>
+      <div class="elipse-right-top-image-container">
+        <img src="/images/min/Ellipse 2 - bending child_min.png" alt="image of a bending child">
+      </div>
+      <div class="elipse-bottom-left-image-container">
+        <img src="/images/Ellipse 1 - women pounding grain.png" alt="image of women pounding grain">
+      </div>
+      <div class="elipse-bottom-right-image-container">
+        <img src="/images/Reaching Text - reaching the end of the earth.png" alt="image of text reaching the end of the earth">
+      </div>
+    </div>
   </div>
 </header>

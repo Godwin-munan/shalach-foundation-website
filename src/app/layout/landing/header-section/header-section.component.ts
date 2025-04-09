@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header-section',
@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 export class HeaderSectionComponent {
 
   isDropdownOpen = false;
+  headerHeight: string = '100vh'; // Default value
 
   toggleDropdown(event: MouseEvent) {
     event.preventDefault();
@@ -18,5 +19,18 @@ export class HeaderSectionComponent {
   closeDropdown() {
     this.isDropdownOpen = false;
   }
-  
+
+
+  ngOnInit() {
+    this.setHeaderHeight();
+  }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.setHeaderHeight();
+  }
+
+  private setHeaderHeight() {
+    this.headerHeight = window.innerHeight + 'px';
+  }
 }
