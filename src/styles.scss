@@ -42,23 +42,23 @@ question mark - &#63;
 
   --outfit-font: 'Outfit';
   --roboto-font: 'Roboto';
+  --bebas-neue-font: 'Bebas Neue';
   --app-primary-color: #2AAAAB;
   --app-white-background-color: #FFFFFF;
   --app-purple-color: #542BC9;
+  --app-purple-text-color: #322262;
   --app-white-color: #FFFFFF;
   --app-black-color: #000000;
   --app-vision-card-background-color: #542BC9;
+  --app-goals-background-color: #C6F4F5;
+  --app-goals-header-color: #575A5D;
+  --app-goals-green-card-color: #78D171;
+  --app-goals-pink-card-color: #E01483;
+  --app-foot-purple-background-color: #322262;
   --container-centered: 0px auto;
   --header-container-width: 1210px;
   --header-medium-container-width: 1210px;
   --header-mobile-container-width: 1210px;
-
-  --subtitle-color: #FFFFFF;
-  --subtitle-font: 'Outfit';
-  --subtitle-weight: 700;
-  --subtitle-size: 40px;
-  --subtitle-mobile-size: 24px;
-  --subtitle-margin-bottom: 12px;
 
 
   --content-title-container: 700px;
@@ -78,6 +78,13 @@ question mark - &#63;
   --title-medium-size: 64px;
   // --title-mobile-size: 48px;
   --title-mobile-size: 34px;
+
+  --subtitle-color: #FFFFFF;
+  --subtitle-font: 'Outfit';
+  --subtitle-weight: 700;
+  --subtitle-size: 40px;
+  --subtitle-mobile-size: 24px;
+  --subtitle-margin-bottom: 12px;
 
   /***** Heading one specific *****/
   --nav-text-color: #0D2B46;
@@ -100,6 +107,7 @@ question mark - &#63;
   --paragraph-margin-bottom: 12px;
 
 
+  font-size: 16px;
 }
 
 body {
@@ -114,6 +122,7 @@ body {
   }
 
   h2 {
+    font-family: var(--subtitle-font);
     color: var(--subtitle-color);
     font-size: var(--subtitle-size);
     font-weight: var(--subtitle-weight);
@@ -124,9 +133,10 @@ body {
   }
 
   p {
-    color: #163048;
-    font-size: 18px;
-    font-weight: 400;
+    font-family: var(--paragraph-font);
+    // color: #163048;
+    // font-size: 18px;
+    // font-weight: 400;
   }
 
   nav {
