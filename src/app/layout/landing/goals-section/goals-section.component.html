@@ -1,3 +1,230 @@
-<section>
-  <p>goals-section works!</p>
+<section id="goals" class="main-goal-container">
+  <div class="united-nations-sdg-container">
+
+    <div class="goals-header-container">
+      <div class="goals-header-title-container">
+        <h2>
+          United Nations Sustainable  Development Goals (SDG)
+        </h2>
+      </div>
+
+      <div class="goals-header-paragraph-container">
+        <p>
+          As an organization, We are committed to making a positive impact in achieving GOALS 3 and 10.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="goals-card-container">
+      <div class="goals-card-left-container"
+        (mouseenter)="onLeftMouseEnter()"
+        (mouseleave)="onLeftMouseLeave()"
+        (touchstart)="onLeftTouchStart($event)"
+      >
+
+        <!-- Visible Content -->
+        <div class="goal-left-visible-content-container" *ngIf="!isLeftContentVisible">
+
+          <div class="goal-visible-content-main-container">
+            <h3>
+              3
+            </h3>
+            <div class="goal-visible-content-main-paragraph">
+              <p>
+                GOOD HEALTH AND WELL-BEING
+              </p>
+            </div>
+          </div>
+          <div class="goal-visible-content-icon-container">
+            <img src="/icon/heart_beat_icon.png" alt="heart beat icon">
+          </div>
+        </div>
+
+        <!-- Hidden Content -->
+        <div class="goal-left-hidden-content-container" *ngIf="isLeftContentVisible">
+          <div class="h2-number-content-container">
+            <h2>
+              3
+            </h2>
+          </div>
+          <div class="goal-number-content-container">
+            <h3>
+              Goal 3
+            </h3>
+          </div>
+          <div class="goal-paragraph-content-container">
+            <p>
+              Ensure healthy lives and promote well-being for all at all ages.
+            </p>
+          </div>
+          <div class="goal-divider-content-container">
+            <hr>
+          </div>
+          
+          <div class="goal-main-content-container">
+            <div class="card-goals-segment-1">
+
+              <div class="card-goals-segment-cover">
+                <h3>13</h3>
+                <p>Targets</p>
+              </div>
+              <div class="card-goals-segment-cover">
+                <h3>64</h3>
+                <p>Events</p>
+              </div>
+              <!-- <div>
+
+              </div>
+              <div>
+
+              </div> -->
+
+              <!-- <div>
+
+              </div>
+              <div>
+
+              </div> -->
+
+            </div>
+
+            <div class="card-goals-segment-2">
+
+              <div class="card-goals-segment-cover">
+                <h3>49</h3>
+                <p>Publications</p>
+              </div>
+              <div class="card-goals-segment-cover">
+                <h3>1305</h3>
+                <p>Actions</p>  
+              </div>
+
+              <!-- <div>
+
+              </div>
+              <div>
+
+              </div> -->
+
+              <!-- <div>
+
+              </div>
+              <div>
+              
+              </div> -->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="goals-card-right-container"
+        (mouseenter)="onRightMouseEnter()"
+        (mouseleave)="onRightMouseLeave()"
+        (touchstart)="onRightTouchStart($event)"
+      >
+
+        <!-- Visible Content -->
+        <div class="goal-right-visible-content-container" *ngIf="!isRightContentVisible">
+
+          <div class="goal-visible-content-main-container">
+
+            <h3>
+              10
+            </h3>
+            <div class="goal-visible-content-main-paragraph">
+              <p>
+                REDUCED INEQUALITIES
+              </p>
+            </div>
+
+          </div>
+          <div class="goal-visible-content-icon-container">
+            <img src="/icon/eight_in_a_box_icon.png" alt="Number 8 in a box icon">
+          </div>
+        </div>
+
+        <!-- Hidden Content -->
+        <div class="goal-right-hidden-content-container" *ngIf="isRightContentVisible">
+          <div class="h2-number-content-container">
+            <h2>
+              10
+            </h2>
+          </div>
+          <div class="goal-number-content-container">
+            <h3>
+              Goal 10
+            </h3>
+          </div>
+          <div class="goal-paragraph-content-container">
+            <p>
+              Reduce inequality within and among countries.
+            </p>
+          </div>
+          <div class="goal-divider-content-container">
+            <hr>
+          </div>
+          
+          <div class="goal-main-content-container">
+            <div class="card-goals-segment-1">
+
+              <div class="card-goals-segment-cover">
+                <h3>10</h3>
+                <p>Targets</p>
+              </div>
+              <div class="card-goals-segment-cover">
+                <h3>97</h3>
+                <p>Events</p>
+              </div>
+              <!-- <div>
+
+              </div>
+              <div>
+
+              </div> -->
+
+              <!-- <div>
+
+              </div>
+              <div>
+
+              </div> -->
+
+            </div>
+            <div class="card-goals-segment-2">
+
+              <div class="card-goals-segment-cover">
+                <h3>15</h3>
+                <p>Publications</p>
+              </div>
+              <div class="card-goals-segment-cover">
+                <h3>1015</h3>
+                <p>Actions</p>
+              </div>
+
+              <!-- <div>
+
+              </div>
+              <div>
+
+              </div> -->
+
+              <!-- <div>
+
+              </div>
+              <div>
+
+              </div> -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </section>
