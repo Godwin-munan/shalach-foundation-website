@@ -1,7 +1,13 @@
 
+
+/*************** VISION MAIN CONTAINER ***************/
 .main-vision-container {
   background-color: var(--app-white-background-color);
+  padding-bottom: 60px;
 }
+
+
+/*************** VISION HEADER SECTION ***************/
 .vision-header-container {
   background-color: var(--app-primary-color);
   height: 97px;
@@ -13,11 +19,15 @@
   padding-top: 30px;
 }
 
+
+
+/*************** VISION CARD SECTION ***************/
 .vision-card-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 4px;
 }
 
 .vision-card-left-container,
@@ -44,12 +54,12 @@
 }
 
 .vision-icon-container {
-  position: relative;   /* Establishes a positioning context */
-  width: 80px;         /* Adjust dimensions as needed */
+  position: relative;   
+  width: 80px;        
   height: 80px;
   display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center;     /* Centers content vertically */
+  justify-content: center; // Centers content horizontally 
+  align-items: center;     // Centers content vertically
   margin-bottom: 10px;
 }
 
@@ -62,22 +72,24 @@
 // }
 
 
+// circular background
 .background-left-circle,
 .background-right-circle {
   width: 100%;
   height: 100%;
-  border-radius: 50%;       /* Makes it circular */
-  object-fit: cover;        /* Ensures image covers the area nicely */
+  border-radius: 50%;     
+  object-fit: cover;       
 }
 
 
+//image icon 
 .inner-left-circle,
 .inner-right-circle {
-  width: 50%;               /* Adjust the size of the inner circle as desired */
+  width: 50%;              
   height: 50%;
-  border-radius: 50%;       /* Makes it circular */
+  border-radius: 50%;      
   object-fit: cover;
-  position: absolute;       /* Optional if you want it to float above */
+  position: absolute;       
 }
 
 
@@ -92,7 +104,7 @@
 .vision-paragraph-right-container p{
   font-family: var(--paragraph-font);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .vision-paragraph-left-container p {
