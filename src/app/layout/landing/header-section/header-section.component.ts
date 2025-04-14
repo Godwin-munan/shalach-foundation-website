@@ -9,6 +9,7 @@ import { Component, HostListener } from '@angular/core';
 export class HeaderSectionComponent {
 
   isDropdownOpen = false;
+  isMobileMenuOpen = false;  // new property for mobile menu state
   headerHeight: string = '100vh'; // Default value
 
   toggleDropdown(event: MouseEvent) {
@@ -20,6 +21,9 @@ export class HeaderSectionComponent {
     this.isDropdownOpen = false;
   }
 
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 
   ngOnInit() {
     this.setHeaderHeight();
