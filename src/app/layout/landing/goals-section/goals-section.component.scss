@@ -39,6 +39,48 @@
   padding: 40px;
 }
 
+
+@mixin card-container-style-mobile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  height: 370px;
+  border-radius: 27px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding-bottom: 4px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+@mixin visible-content-style-mobile {
+  position: relative;
+  margin-top: auto;
+  align-self: flex-start;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  height: 130px;
+  width: 150px;
+  border: 1.5px solid var(--app-white-background-color);
+  z-index: 1;
+}
+
+@mixin hidden-content-style-mobile {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 15px;
+}
+
+
 @mixin bebas-font-style {
   font-family: var(--bebas-neue-font);
   font-weight: 700;
@@ -57,17 +99,20 @@
 }
 
 .united-nations-sdg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   width: 98%;
   border-radius: 50px;
   background-color: var(--app-goals-background-color);
   margin: 0 auto;
-  padding: 40px 200px 110px 200px;
+  padding: 50px 125px 110px 125px;
   z-index: 2;
 }
 
 .goals-header-container {
-  width: 1000px;
+  //width: 1000px;
   margin: 0 auto;
   text-align: center;
   padding-bottom: 20px;
@@ -84,7 +129,7 @@
 }
 
 .goals-header-paragraph-container {
-  width: 550px;
+  width: 50%;
   margin: 0 auto;
   text-align: center;
   padding-bottom: 5px;
@@ -102,7 +147,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  max-width: 1000px;
+  //max-width: 1000px;
   padding: 10px 0;
 }
 
@@ -178,6 +223,8 @@
 
 .h2-number-content-container h2{
   @include bebas-font-style;
+  //font-size: 60px;
+  //font-size: clamp(20px, 5vw, 60px);
   font-size: 60px;
   color: #ADAAA8;
 }
@@ -253,7 +300,237 @@
 }
 
 
+/* Styles for devices with a maximum width of 1366px (e.g., tablet) */
+@media only screen and (max-width: 1150px) {
 
+
+  .united-nations-sdg-container {
+    padding: 50px 30px 110px 30px;
+    z-index: 2;
+  }
+
+  .goals-header-container .goals-header-title-container h2 {
+    font-size: 40px;
+    line-height: 1.3;
+  }
+
+  .goals-header-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+}
+
+/* Styles for devices with a maximum width of 600px (e.g., smartphones) */
+@media only screen and (max-width: 600px) {
+  
+  //touch
+  .united-nations-sdg-container {
+    border-radius: 20px;
+    padding: 50px 15px 50px 15px;
+    z-index: 2;
+  }
+  
+  .goals-header-container {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .goals-header-title-container {
+    padding-bottom: 4px;
+  }
+  
+  //touch
+  .goals-header-container .goals-header-title-container h2 {
+    font-size: 30px;
+    line-height: 1.1;
+    text-align: left;
+  }
+  
+  //touch
+  .goals-header-paragraph-container {
+    width: 90%;
+    margin: 0;
+    padding: 5px 0 5px 0;
+  }
+  
+  //touch
+  .goals-header-container .goals-header-paragraph-container p {
+    font-weight: 600;
+    font-size: .8rem;
+    text-align: left;
+  }
+  
+  //touch
+  .goals-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //max-width: 1000px;
+    padding: 10px 0;
+  }
+  
+  //touch
+  .goals-card-left-container {
+    background-image: url('/images/Rectangle_104-doctor_testing_a_patient.png');
+    @include card-container-style-mobile;
+    margin: 0 0 10px 0;
+  }
+  
+  //touch
+  .goals-card-right-container {
+    background-image: url('/images/Rectangle_105-a_man_helping_a_physically_challenge_person.png');
+    @include card-container-style-mobile;
+    margin: 10px 0 0 0;
+  }
+  
+  .goal-left-visible-content-container {
+    @include visible-content-style-mobile;
+    background-color: rgba(120, 209, 113, 0.7);
+  }
+  
+  .goal-right-visible-content-container {
+    @include visible-content-style-mobile;
+    background-color: rgba(224, 20, 131, 0.7);
+  }
+  
+  .goal-left-hidden-content-container {
+    @include hidden-content-style-mobile;
+    background-color: rgba(120, 209, 113, 0.7);
+  }
+  
+  .goal-right-hidden-content-container {
+    @include hidden-content-style-mobile;
+    background-color: rgba(224, 20, 131, 0.7);
+  }
+  
+  .goal-visible-content-main-container {
+    @include bebas-font-style;
+    color: var(--app-white-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  //touch
+  .goal-visible-content-main-container h3 {
+   font-size: 30px;
+   padding-left: 16px;
+  }
+  
+  .goal-visible-content-main-paragraph {
+    padding: 0 5px 0 8px;
+    width: 88%;
+    line-height: 1.2;
+    z-index: 4;
+  }
+  
+  //touch
+  .goal-visible-content-main-container .goal-visible-content-main-paragraph p {
+    font-size: 11px;
+  }
+  
+  //touch
+  .goal-visible-content-icon-container {
+    margin: 0 auto;
+  }
+  
+  //touch
+  .goal-visible-content-icon-container img {
+    margin: 0 auto;
+    height: 60px;
+    width: 60px;
+  }
+  
+  .h2-number-content-container {
+    justify-content: start;
+  }
+  
+  .h2-number-content-container h2{
+    @include bebas-font-style;
+    //font-size: 60px;
+    font-size: 30px;
+    color: #ADAAA8;
+  }
+  
+  .goal-number-content-container {
+    justify-content: start;
+  }
+  
+  //touch
+  .goal-number-content-container h3 {
+    @include bebas-font-style;
+    font-size: 25px;
+    color: var(--app-white-color);
+  }
+  
+  .goal-paragraph-content-container {
+    justify-content: start;
+  }
+  
+  //touch
+  .goal-paragraph-content-container p {
+    @include roboto-font-style;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+  
+  }
+  
+  .goal-divider-content-container hr {
+    border: none;
+    height: 1.2px;
+    margin: 15px 0;
+    background-color: var(--app-white-color);
+  }
+  
+  .goal-main-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  
+  }
+  
+  .card-goals-segment-1,
+  .card-goals-segment-2 {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+    height: 100px
+  }
+  
+  .card-goals-segment-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 120px;
+    height: 100px;
+  }
+  
+  .card-goals-segment-1 .card-goals-segment-cover h3,
+  .card-goals-segment-2 .card-goals-segment-cover h3 {
+    @include bebas-font-style;
+    font-size: 28px;
+    color: var(--app-white-color);
+    height: 100%;
+    width: 100%;
+  }
+  
+  .card-goals-segment-1 .card-goals-segment-cover p,
+  .card-goals-segment-2 .card-goals-segment-cover p {
+    @include roboto-font-style;
+    font-size: 13px;
+    height: 100%;
+    width: 100%;
+  }
+  
+}
 
 
 
