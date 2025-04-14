@@ -48,6 +48,12 @@
   height: 50px; /* Adjust based on your logo's size */
 }
 
+// Default styles for larger screens
+.nav-items {
+  display: flex;
+  // your other styles…
+}
+
 .nav-items ul {
   display: flex;
   list-style: none;
@@ -67,7 +73,7 @@
   display: block;
 }
 
-.nav-items a::after {
+.nav-items  > ul > li >  a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -80,12 +86,12 @@
   transition: transform 0.3s ease;
 }
 
-.nav-items a:hover::after {
+.nav-items  > ul > li >  a:hover::after {
   transform: scaleX(1);
 }
 
 /* Add bottom border on hover */
-.nav-items a:hover {
+.nav-items  > ul > li >  a:hover {
   width: inherit;
   border-bottom: 3.5px solid var(--button-background-color); /* Solid black bottom border */
 }
@@ -120,7 +126,7 @@
 .dropdown-menu.show {
   display: flex;
   flex-direction: column;
-  opacity: 1;              
+  opacity: 1;     
   transform: scaleY(1); 
 }
 
@@ -266,6 +272,132 @@
   max-width: 290px; /* Adjust percentage as needed */
   height: 290px;
 }
+
+// Hide the hamburger icon on larger screens
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+}
+
+// Media query for mobile screens
+@media only screen and (max-width: 600px) {
+
+  .vector-image-container{
+    height: 200px; 
+    margin-top: 5px;
+  }
+  
+  .vector-image {
+    height: 50%;
+    width: 15rem;
+  }
+
+  /* Logo styling */
+  .logo img {
+    height: 40px; /* Adjust based on your logo's size */
+  }
+  
+  // Show the hamburger icon
+  .hamburger-icon {
+    display: block;
+  }
+  
+  // Hide the navigation links by default
+  .nav-items {
+    display: none;
+  }
+
+  // When the mobile menu is open (toggle class applied)
+  .nav-items.open {
+    display: flex;
+    flex-direction: column;  // Stack links vertically if desired
+    width: 100%;
+    background-color: #fff;  // Optional: add background for the mobile menu
+    position: absolute;
+    top: 100%; // Place below the header
+    left: 0;
+    padding: 10px 0;
+    height: 100vh;
+  }
+
+
+    // Force the inner UL to stack items vertically
+  .nav-items.open ul {
+    flex-direction: column;
+  }
+  
+  // Adjust LI margins for vertical spacing (optional)
+  .nav-items.open li {
+    position: relative;
+    margin: 10px 0;
+  }
+
+  .nav-items  > ul > li >  a:hover {
+    background-color: transparent; // Remove any background change
+    border-bottom: none;           // Remove the bottom border on hover
+  }
+  
+  // If you have hover changes on pseudo-elements, reset them too:
+  .nav-items > ul > li > a:hover::after {
+    border-bottom: none;
+    transform: none;
+  }
+
+  // Use :after to add a line after each li except the last one
+  .nav-items.open > ul > li::after {
+    content: "";
+    display: block;
+    width: 90%;             // Adjust width as needed
+    height: 1px;            // Height of the rule
+    background-color: #ccc; // Color of the line
+    margin: 10px auto 0;    // Top margin and centered horizontally
+  }
+
+
+    .dropdown-menu {
+      display: block;           /* Always visible */
+      position: relative;       /* Part of the natural flow */
+      top: auto;                /* Reset the top offset */
+      left: auto;
+      width: 100%;              /* Fill the container width */
+      background-color: #fff;   /* Or your preferred background */
+      box-shadow: none;         /* Remove any shadow, if applied */
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      opacity: 1;               /* Fully visible */
+      transform: translateY(0);
+      transition: none;         /* No need to transition */
+      z-index: auto;
+    }
+
+
+
+  .sub-header-container{
+    padding: 20px 0 8px 0;
+    flex: 0;
+  }
+  
+  .sub-header-content-container {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;   
+    flex: 1;     
+    margin: var(--container-centered);
+    max-width: var(--header-container-width);
+    width: 100%;
+  }
+
+  .cta-button {
+    display: none;
+  }
+}
+
+
+
+
+
+
 
 
 

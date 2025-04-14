@@ -9,11 +9,36 @@
     <div class="header-nav-container">
       <!-- Logo on the left -->
       <div class="logo">
-        <img src="/logo/Group 14  - shalach logo.png" alt="shalach foundation logo">
+        <img src="/logo/Group_14_shalach-logo.svg" alt="shalach foundation logo">
+      </div>
+
+      <!-- Hamburger menu icon (visible on mobile only) -->
+      <div class="hamburger-icon">
+        
+        <button (click)="toggleMobileMenu()"
+        type="button"
+        class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none"
+        aria-controls="mobile-menu"
+        [attr.aria-expanded]="isMobileMenuOpen">
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon: 3 bars when menu is closed -->
+          <svg *ngIf="!isMobileMenuOpen" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close icon: "X" when menu is open -->
+          <svg *ngIf="isMobileMenuOpen" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
       </div>
   
       <!-- Navigation items in the center -->
-      <nav class="nav-items" appClickOutside (clickOutside)="closeDropdown()">
+      <nav class="nav-items" appClickOutside (clickOutside)="closeDropdown()" [ngClass]="{'open': isMobileMenuOpen}">
         <ul>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" (click)="toggleDropdown($event)">About us</a>
