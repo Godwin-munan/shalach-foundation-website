@@ -141,9 +141,9 @@
     justify-content: start; 
     align-items: center; /* Align items vertically */
     margin: -20px 2px 0 2px;
-    padding: 15px;
-    border-radius: 0; /* Remove border radius for mobile */
-    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    height: 360px;
     //margin: 0 5px; /* Adjust margins for smaller screens */
     gap: 0.2rem;
   }
@@ -165,6 +165,7 @@
   .phone-container {
     width: 240px;
     margin-right: 95px;
+    margin-bottom: 20px;
   }
 
   .email-container > span:first-child,
@@ -188,6 +189,7 @@
     height: 100%;
     width: 100%;
     padding: 15px 15px;
+    margin-top: 30px;
   }
 
   .social-media-container img {
@@ -196,7 +198,6 @@
   }
 
   .footer-social-media-links-container {
-
     width: 100%;
   }
   
