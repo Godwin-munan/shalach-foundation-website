@@ -9,6 +9,8 @@ import { HeaderSectionComponent } from './layout/landing/header-section/header-s
 import { FooterSectionComponent } from './layout/landing/footer-section/footer-section.component';
 import { GoalsSectionComponent } from './layout/landing/goals-section/goals-section.component';
 import { ClickOutsideDirectiveDirective } from './directives/click-outside-directive.directive';
+import { TeamComponent } from './pages/team/team.component';
+import { OverviewComponent } from './pages/overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ClickOutsideDirectiveDirective } from './directives/click-outside-direc
     HeaderSectionComponent,
     FooterSectionComponent,
     GoalsSectionComponent,
-    ClickOutsideDirectiveDirective
+    ClickOutsideDirectiveDirective,
+    TeamComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
