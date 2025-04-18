@@ -1,7 +1,7 @@
 <header 
   id="header" 
   class="main-header-container" 
-  [style.height]="headerHeight" 
+  [style.height]="!isMobileWidth ? headerHeight : 'auto'"
   [ngStyle]="{ 'margin-bottom.px': isHomePage ? 'auto' : 0 }"
   >
   <!-- Vector background image container -->
@@ -106,8 +106,12 @@
     <div class="header-content-image-container">
 
       <div class="elipse-image-container">
-        <img src="/images/full_eclipse_images_1_optimized.png" alt="image of a bending child" *ngIf="!isMobileWidth">
-        <img src="/images/full_eclipse_images_2_optimized_mobile_2.png" alt="image of a bending child" *ngIf="isMobileWidth">
+        <img 
+        [src]="!isMobileWidth 
+               ? '/images/full_eclipse_images_1_optimized.png'
+               : '/images/full_eclipse_images_2_optimized_mobile_2.png'"
+        alt="eclipse montage"
+      />
       </div>
 
       <!-- <div class="elipse-top-center-image-container">
