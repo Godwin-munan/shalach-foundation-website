@@ -58,7 +58,7 @@ question mark - &#63;
   --container-centered: 0px auto;
   --header-container-width: 1390px;
   --header-medium-container-width: 1210px;
-  --header-mobile-container-width: 1210px;
+  --header-mobile-container-width: 600px;
 
 
   --content-title-container: 700px;
@@ -74,7 +74,7 @@ question mark - &#63;
   --title-color: #121212;
   --title-font: 'Outfit';
   --title-weight: 700;
-  --title-size: 81px;
+  --title-size: 85px;
   --title-medium-size: 64px;
   --title-mobile-size: 55px;
 
@@ -128,6 +128,7 @@ body {
   }
 
   h3 {
+    font-family: var(--subtitle-font);
     font-size: var(--subtitle-h3-size);
   }
 
