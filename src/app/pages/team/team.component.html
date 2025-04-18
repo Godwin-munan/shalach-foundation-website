@@ -1,0 +1,23 @@
+<section id="team" class="team-section">
+  <div class="team-container">
+    <div class="team-header">
+      <h2>Meet our Team</h2>
+    </div>
+    <div class="team-content">
+      <div class="team-card" *ngFor="let member of team">
+        <div class="team-member-image-container">
+          <img [src]="member?.image" alt="Team Member 1">
+        </div>
+        <div class="team-label">
+          <div class="name">
+            <h3>{{ member?.name }}</h3>
+          </div>
+          <div class="position">
+            <p>{{ member?.position }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat .team-card for each team member -->
+    </div>
+  </div>
+</section>

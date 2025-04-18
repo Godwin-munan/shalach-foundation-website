@@ -1,0 +1,155 @@
+.overview-section {
+  padding: 40px 100px;
+  z-index: 1000;
+  margin: 0 auto;
+}
+
+.mission-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.our-mission-container {
+
+  display: flex;
+  flex-direction: row;
+  //justify-content: center;
+  gap: 150px;
+  
+  margin-top: 10px;
+
+  width: 100%;
+  // height: 400px;
+  //background-color: gainsboro;
+}
+
+.our-mission-card {
+  width: 650px;
+  align-self: flex-start;
+  padding: 20px;
+}
+
+.our-mission-card  .our-mission-card-content {
+  border-radius: 35px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #E4DCFC;
+  color: hsl(255, 48%, 26%);
+  padding: 50px;
+}
+
+
+.our-mission-card  .our-mission-card-header h3 {
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--app-purple-color);
+
+  /* Text shadow instead of box shadow */
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3),  0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.our-mission-card  .our-mission-card-content p {
+  line-height: 1.4;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+br.custom-br {
+  display: block;
+  height: 10px; /* Adjust height */
+  margin: 0;
+  content: "";
+}
+
+.our-mission-image {
+  width: 40%;
+  align-self: center;
+}
+
+
+.our-mission-image .our-mission-image-one {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0 0 0;
+}
+
+.our-mission-image .our-mission-image-one .image-two {
+  position: absolute;
+  bottom: 30px;
+  left: 300px;
+  transform: translateX(-40px) translateY(70px);
+  // width: 40%;
+  // height: 35%;
+  width: 50%;
+  height: 55%;
+}
+
+.our-mission-image .our-mission-image-one .image-three {
+  position: absolute;
+  bottom: 20px;
+}
+
+
+// Mobile (1 per row)
+@media (max-width: 600px) {
+
+  .overview-section {
+    padding: 30px 10px;
+    z-index: 1000;
+    margin: 0 auto;
+  }
+
+  .our-mission-container {
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+
+  .our-mission-card {
+    width: 100%;
+    align-self: flex-start;
+    padding: 20px 20px 0 20px;
+  }
+
+  .our-mission-card  .our-mission-card-content {
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .our-mission-card  .our-mission-card-header h3 {
+    font-size: 35px;
+  }
+
+  .our-mission-card  .our-mission-card-content p {
+    font-size: 13px;
+  }
+
+  .our-mission-image {
+    width: 100%;
+    align-self: center;
+  }
+
+  .our-mission-image .our-mission-image-one {
+    display: block;
+    // width: ;
+    // height: auto;
+    margin: 0 auto;
+    padding: 30px;
+  }
+
+  .our-mission-image .our-mission-image-one img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
