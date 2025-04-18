@@ -1,4 +1,9 @@
-<header id="header" class="main-header-container" [style.height]="headerHeight">
+<header 
+  id="header" 
+  class="main-header-container" 
+  [style.height]="headerHeight" 
+  [ngStyle]="{ 'margin-bottom.px': isHomePage ? 'auto' : 0 }"
+  >
   <!-- Vector background image container -->
   <div class="vector-image-container">
     <div class="vector-image"></div>
@@ -9,7 +14,9 @@
     <div class="header-nav-container">
       <!-- Logo on the left -->
       <div class="logo">
-        <img src="/logo/Group_14_shalach-logo.svg" alt="shalach foundation logo">
+        <a routerLink="/" (click)="resetDropdown()">
+          <img src="/logo/Group_14_shalach-logo.svg" alt="shalach foundation logo">
+        </a>
       </div>
 
       <!-- Hamburger menu icon (visible on mobile only) -->
@@ -40,11 +47,21 @@
       <!-- Navigation items in the center -->
       <nav class="nav-items" appClickOutside (clickOutside)="closeDropdown()" [ngClass]="{'open': isMobileMenuOpen}">
         <ul>
-          <li class="dropdown">
+          <li class="dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
             <a href="#" class="dropdown-toggle" (click)="toggleDropdown($event)">About us</a>
             <ul class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
-              <li><a href="#">Overview</a></li>
-              <li><a href="#">Our Team</a></li>
+              <li [ngClass]="{
+                'active': activeDropdownItem === 'overview',
+                'disabled': activeDropdownItem && activeDropdownItem === 'overview'
+              }">
+                <a routerLink="/overview" (click)="setActiveDropdownItem('overview'); closedDropdown()">Overview</a>
+              </li>
+              <li [ngClass]="{
+                    'active': activeDropdownItem === 'team',
+                    'disabled': activeDropdownItem && activeDropdownItem === 'team'
+                  }">
+                <a routerLink="/team" (click)="setActiveDropdownItem('team'); closedDropdown()">Our Team</a>
+              </li>
             </ul>
           </li>
           <li><a href="#">Our Work</a></li>
@@ -61,7 +78,7 @@
     </div>
   </div>
 
-  <div class="sub-header-content-container">
+  <div *ngIf="isHomePage" class="sub-header-content-container">
 
     <!-- Header content text section -->
     <div class="header-content-title-container">
@@ -77,14 +94,23 @@
       </div>
 
       <!-- Button on the right -->
-      <div class="cta-button-mobile" [hidden]="!isMobileWidth">
-        <button>Contact Us</button>
+      <div 
+        class="cta-button-mobile" 
+        [hidden]="!isMobileWidth"
+        >
+        <button (click)="goToContact()">Contact Us</button>
       </div>
     </div>
 
     <!-- Header content image section - images are stacked over each other in a eclipse like structure -->
     <div class="header-content-image-container">
-      <div class="elipse-top-center-image-container">
+
+      <div class="elipse-image-container">
+        <img src="/images/full_eclipse_images_1_optimized.png" alt="image of a bending child" *ngIf="!isMobileWidth">
+        <img src="/images/full_eclipse_images_2_optimized_mobile_2.png" alt="image of a bending child" *ngIf="isMobileWidth">
+      </div>
+
+      <!-- <div class="elipse-top-center-image-container">
         <img src="/images/min/Ellipse 3 - image of a child and sibling_min.png" alt="image of a young boy with his sibling">
       </div>
       <div class="elipse-right-top-image-container">
@@ -95,7 +121,7 @@
       </div>
       <div class="elipse-bottom-right-image-container">
         <img src="/images/Reaching Text - reaching the end of the earth.png" alt="image of text reaching the end of the earth">
-      </div>
+      </div> -->
     </div>
   </div>
 </header>

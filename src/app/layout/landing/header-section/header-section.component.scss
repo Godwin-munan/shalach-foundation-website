@@ -112,6 +112,7 @@
   background-color: rgba(0, 0, 0, 0); /* Explicitly transparent background */
   box-shadow: none;  
   list-style: none;
+  width: 200px;
   //box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 0;
   margin: 0;
@@ -149,6 +150,12 @@
 
 .dropdown-menu a:hover {
   //background-color: #f1f1f1;
+}
+
+/* Style disabled items so they appear inactive */
+.disabled a {
+  opacity: 0.5;
+  pointer-events: none; /* Prevent clicking on inactive items */
 }
 
 
@@ -202,9 +209,29 @@
   align-self: flex-start;
   flex-shrink: 0;
   flex-wrap: 1;
-  max-width: var(--content-title-container);
+  //max-width: var(--content-title-container);
+  width: 55%;
+  margin: 75px 0 20px 0;
+}
+
+.header-content-image-container {
+  position: relative;
+  align-self: flex-start;
+  flex: 1;
+  //max-width: var(--content-title-container);
   width: 100%;
-  margin: 120px 0 20px 0;
+  height: auto;
+  margin: -105px 13px 100px -40px;
+}
+
+.elipse-image-container {
+
+}
+
+.elipse-image-container img {
+  //display: block;
+  // width: 100%;
+  // height: 100%;
 }
 
 .header-content-title-maintitle-container{
@@ -216,23 +243,9 @@
 }
 
 .header-content-title-subtitle-container p {
-  font-size: 20px;
+  font-size: 22px;
 }
 
-.header-content-image-container {
-  align-self: flex-start;
-  flex: 1;
-  max-width: var(--content-title-container);
-  width: 100%;
-  margin: 120px 0 20px 0;
-}
-
-
-.header-content-image-container {
-  position: relative;
-  width: 100%;
-  height: auto; /* Adjust height as needed */
-}
 
 /* Top Image */
 .elipse-top-center-image-container {
@@ -303,13 +316,11 @@
 
 // Media query for mobile screens
 @media only screen and (max-width: 600px) {
-
   .main-header-container {
-    //height: 100vh;
     margin-bottom: 125px;
   }
 
-  .vector-image-container{
+  .vector-image-container {
     height: 200px; 
     margin-top: 5px;
   }
@@ -319,105 +330,90 @@
     width: 15rem;
   }
 
-  /* Logo styling */
   .logo img {
-    height: 40px; /* Adjust based on your logo's size */
+    height: 40px;
   }
   
-  // Show the hamburger icon
   .hamburger-icon {
     display: block;
   }
   
-  // Hide the navigation links by default
   .nav-items {
     display: none;
   }
 
-  /* Flex container for header */
-.header-nav-container {
-  z-index: 10
-}
+  .header-nav-container {
+    z-index: 10;
+  }
 
-  // When the mobile menu is open (toggle class applied)
   .nav-items.open {
     display: flex;
-    flex-direction: column;  // Stack links vertically if desired
+    flex-direction: column;
     width: 100%;
-    background-color: #fff;  // Optional: add background for the mobile menu
+    background-color: #fff;
     position: absolute;
-    top: 100%; // Place below the header
+    top: 100%;
     left: 0;
     padding: 10px 0;
     height: 100vh;
     z-index: 8;
   }
 
-
-    // Force the inner UL to stack items vertically
   .nav-items.open ul {
     flex-direction: column;
   }
   
-  // Adjust LI margins for vertical spacing (optional)
   .nav-items.open li {
     position: relative;
     margin: 10px 0;
   }
 
-  .nav-items  > ul > li >  a:hover {
-    background-color: transparent; // Remove any background change
-    border-bottom: none;           // Remove the bottom border on hover
+  .nav-items > ul > li > a:hover {
+    background-color: transparent;
+    border-bottom: none;
   }
   
-  // If you have hover changes on pseudo-elements, reset them too:
   .nav-items > ul > li > a:hover::after {
     border-bottom: none;
     transform: none;
   }
 
-  // Use :after to add a line after each li except the last one
   .nav-items.open > ul > li::after {
     content: "";
     display: block;
-    width: 90%;             // Adjust width as needed
-    height: 1px;            // Height of the rule
-    background-color: #ccc; // Color of the line
-    margin: 10px auto 0;    // Top margin and centered horizontally
+    width: 90%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px auto 0;
   }
 
+  .dropdown-menu {
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+    z-index: 10;
+  }
 
-    .dropdown-menu {
-      display: block;           /* Always visible */
-      position: relative;       /* Part of the natural flow */
-      top: auto;                /* Reset the top offset */
-      left: auto;
-      width: 100%;              /* Fill the container width */
-      background-color: #fff;   /* Or your preferred background */
-      box-shadow: none;         /* Remove any shadow, if applied */
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      opacity: 1;               /* Fully visible */
-      transform: translateY(0);
-      transition: none;         /* No need to transition */
-      z-index: 10;
-    }
-
-
-
-  .sub-header-container{
+  .sub-header-container {
     padding: 20px 0 8px 0;
     flex: 0;
   }
   
   .sub-header-content-container {
     display: flex;
-    // justify-content: center;
-    // align-items: center;   
-    flex: 1;     
+    flex: 1;
     margin: var(--container-centered);
-    max-width: var(--header-container-width);
+    max-width: var(--header-mobile-container-width);
     width: 100%;
   }
 
@@ -430,35 +426,22 @@
     width: 106px;
     font-size: 13px;
     height: inherit;
-
-
-    background-color: var(--app-white-color);  
-    color: var(--app-black-color);              
-    border: 1px solid var(--button-background-color); 
-
+    background-color: var(--app-white-color);
+    color: var(--app-black-color);
+    border: 1px solid var(--button-background-color);
     border-radius: 50px;
     margin-top: 10px;
     cursor: pointer;
-    transition: all 0.2s ease; 
+    transition: all 0.2s ease;
   }
   
   .cta-button-mobile button:hover {
-    // background-color: var(--app-white-color);  
-    // color: var(--app-black-color);              
-    // border: 1px solid var(--button-background-color); 
-
     background-color: var(--button-background-color);
-    color: var(--app-white-color);                     
+    color: var(--app-white-color);
     border: none;
   }
 
-
-
-
-
-  ////////////////////////////////////
-  
-  .sub-header-container{
+  .sub-header-container {
     padding: 35px 0 8px 0;
     flex: 0;
   }
@@ -466,24 +449,21 @@
   .sub-header-content-container {
     display: flex;
     flex-direction: column;
-    flex: 1;     
+    flex: 1;
     margin: var(--container-centered);
     max-width: var(--header-container-width);
     width: 100%;
   }
-  
 
   .header-content-title-container {
     align-self: flex-start;
-    //flex-shrink: 0;
-    //flex-wrap: 1;
-    max-width: 100%;
+    //max-width: 100%;
     width: 100%;
-    margin: 50px 0 20px 0;
+    margin: 20px 0 20px 0;
     padding: 0 8px;
   }
   
-  .header-content-title-maintitle-container{
+  .header-content-title-maintitle-container {
     padding-bottom: 15px;
   }
 
@@ -492,28 +472,21 @@
     line-height: 1.1;
   }
   
-  .header-content-title-subtitle-container p{
+  .header-content-title-subtitle-container p {
     font-size: 15px;
   }
   
   .header-content-image-container {
     position: relative;
-    width: 100%;
-    height: auto;
+    //width: 100%;
+    //height: 1%;
     align-self: flex-start;
-    flex: 1;
-    max-width: var(--content-title-container);
+    flex: 0;
+    //max-width: var(--content-title-container);
     width: 100%;
-    margin: 0;
+    margin: -80px 0 0 20px;
   }
-
-  // .header-content-image-container  img {
-  //   height: 1px;
-  //   width: 1px;
-  // }
   
-  
-  /* Top Image */
   .elipse-top-center-image-container {
     position: absolute;
     bottom: 60%;
@@ -522,7 +495,6 @@
     z-index: 3;
   }
   
-  /* Left Image */
   .elipse-right-top-image-container {
     position: absolute;
     top: 20%;
@@ -531,12 +503,11 @@
     z-index: 2;
   }
   
-  /* Right Image */
   .elipse-bottom-left-image-container {
     position: absolute;
     top: 0%;
     right: 40%;
-    transform:  translateX(35%) translateY(.1%);
+    transform: translateX(35%) translateY(0.1%);
     z-index: 1;
   }
   
@@ -548,23 +519,16 @@
     z-index: 4;
   }
   
-  
-  
-  /* Top Image - Smallest */
   .elipse-top-center-image-container img {
-    
     max-width: 150px;
     height: 150px;
   }
   
-  
-  /* Right Image - Largest */
   .elipse-right-top-image-container img {
     max-width: 150px;
     height: 150px;
   }
   
-  /* Left Image - Medium */
   .elipse-bottom-left-image-container img {
     max-width: 250px;
     height: 250px;
@@ -576,12 +540,4 @@
     height: 220px;
   }
 }
-
-
-
-
-
-
-
-
 
