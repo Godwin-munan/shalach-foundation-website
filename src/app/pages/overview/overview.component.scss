@@ -93,6 +93,103 @@ br.custom-br {
   bottom: 20px;
 }
 
+.what-who-why-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px 0 20px;
+
+}
+
+.what-who-why-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.what-who-why-image img {
+  width: 90%;
+  height: inherit;
+}
+
+.core-value-container {
+  color: var(--app-purple-color);
+  padding: 50px 20px;
+}
+
+.core-value-header {
+  
+}
+
+.core-value-header h3 {
+  font-size: var(--subtitle-size);
+  font-weight: var(--subtitle-weight);
+}
+
+.core-values-cards {
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.core-values-cards-left, 
+.core-values-cards-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+  width: calc(50% - 50px);
+  
+}
+
+.core-values-cards-left,
+.collaboration-advocacy-cards-container {
+  background-color: var(--app-light-blue-color);
+  border-radius: 13px;
+  padding: 35px;
+}
+
+.collaboration-Advocacy-image {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 35px;
+}
+
+.excellence-passion-integrity-cards {
+  background-color: var(--app-white-background-color);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.excellence-passion-integrity-cards h3 {
+  font-size: 20px;
+  font-weight: var(--subtitle-weight);
+}
+
+.collaboration-Advocacy-cards{
+  background-color: var(--app-white-background-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.collaboration-Advocacy-cards h3 {
+  font-size: 20px;
+  font-weight: var(--subtitle-weight);
+}
+
+.collaboration-Advocacy-image {
+
+}
+
+.collaboration-advocacy-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
 
 // Mobile (1 per row)
 @media (max-width: 600px) {
@@ -101,6 +198,10 @@ br.custom-br {
     padding: 30px 10px;
     z-index: 1000;
     margin: 0 auto;
+  }
+
+  .mission-container {
+    padding-bottom: 20px;
   }
 
   .our-mission-container {
@@ -148,6 +249,93 @@ br.custom-br {
   .our-mission-image .our-mission-image-one img {
     width: 100%;
     height: 100%;
+  }
+
+  .what-who-why-container {
+    padding: 20px 0 20px 0;
+  
+  }
+
+
+  //card section
+  .core-value-container {
+    padding: 10px 10px 50px 10px;
+  }
+  
+  .core-value-header {
+    
+  }
+  
+  .core-value-header h3 {
+    font-size: var(--subtitle-mobile-size);
+  }
+
+  .excellence-passion-integrity-cards p,
+  .collaboration-Advocacy-cards, p {
+    font-size: 13px;
+  }
+  
+  .core-values-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .core-values-cards-left, 
+  .core-values-cards-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+    width: 100%;
+    
+  }
+  
+  .core-values-cards-left,
+  .collaboration-advocacy-cards-container {
+    background-color: var(--app-light-blue-color);
+    border-radius: 13px;
+    padding: 20px;
+  }
+  
+  .collaboration-Advocacy-image {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 35px;
+  }
+  
+  .excellence-passion-integrity-cards {
+    background-color: var(--app-white-background-color);
+    border-radius: 10px;
+    padding: 15px;
+  }
+  
+  .excellence-passion-integrity-cards h3 {
+    font-size: 20px;
+    font-weight: var(--subtitle-weight);
+  }
+  
+  .collaboration-Advocacy-cards{
+    background-color: var(--app-white-background-color);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .collaboration-Advocacy-cards h3 {
+    font-size: 20px;
+    font-weight: var(--subtitle-weight);
+  }
+  
+  .collaboration-Advocacy-image {
+  
+  }
+  
+  .collaboration-advocacy-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
