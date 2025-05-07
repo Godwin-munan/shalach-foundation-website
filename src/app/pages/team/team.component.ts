@@ -15,7 +15,7 @@ export class TeamComponent {
       position: 'CEO/Co-Founder'
     },
     {
-      image: '/images/team/min/rough_gray_background-min.jpg',
+      image: '/images/team/min/gloria-min.jpeg',
       name: 'Grace Kuyahar',
       position: 'COO/Co-Founder'
     },
@@ -35,7 +35,7 @@ export class TeamComponent {
       position: 'Administration'
     },
     {
-      image: '/images/team/min/rough_gray_background-min.jpg',
+      image: '/images/team/min/regina-min.jpeg',
       name: 'Regina Raphael',
       position: 'Administration'
     }
