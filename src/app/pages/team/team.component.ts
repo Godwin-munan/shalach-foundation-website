@@ -10,7 +10,7 @@ export class TeamComponent {
 
   team: any = [
     {
-      image: '/images/team/min/adamaka-min.jpg',
+      image: '/images/team/min/doctor-adamaka-min.jpeg',
       name: 'Adamaka Umeh M.D',
       position: 'CEO/Co-Founder'
     },
@@ -29,16 +29,16 @@ export class TeamComponent {
       name: 'Lester Daniel',
       position: 'Designer'
     },
-    {
-      image: '/images/team/min/Ella-min.jpg',
-      name: 'Emmanuella Aror',
-      position: 'Administration'
-    },
-    {
-      image: '/images/team/min/regina-min.jpeg',
-      name: 'Regina Raphael',
-      position: 'Administration'
-    }
+    // {
+    //   image: '/images/team/min/Ella-min.jpg',
+    //   name: 'Emmanuella Aror',
+    //   position: 'Administration'
+    // },
+    // {
+    //   image: '/images/team/min/regina-min.jpeg',
+    //   name: 'Regina Raphael',
+    //   position: 'Administration'
+    // }
   ]
 
 }
