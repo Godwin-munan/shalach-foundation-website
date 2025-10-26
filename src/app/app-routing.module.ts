@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './layout/landing/landing/landing.component';
 import { TeamComponent } from './pages/team/team.component';
 import { OverviewComponent } from './pages/overview/overview.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'overview',
     component: OverviewComponent
+  },
+    {
+    path: 'gallery',
+    component: GalleryComponent
   },
   {
     path: '**',

@@ -11,6 +11,8 @@ import { GoalsSectionComponent } from './layout/landing/goals-section/goals-sect
 import { ClickOutsideDirectiveDirective } from './directives/click-outside-directive.directive';
 import { TeamComponent } from './pages/team/team.component';
 import { OverviewComponent } from './pages/overview/overview.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,11 @@ import { OverviewComponent } from './pages/overview/overview.component';
     GoalsSectionComponent,
     ClickOutsideDirectiveDirective,
     TeamComponent,
-    OverviewComponent
+    OverviewComponent,
+    GalleryComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule
   ],

@@ -1,6 +1,6 @@
-<header 
-  id="header" 
-  class="main-header-container" 
+<header
+  id="header"
+  class="main-header-container"
   [style.height]="!isMobileWidth ? headerHeight : 'auto'"
   [ngStyle]="{ 'margin-bottom.px': isHomePage ? 'auto' : 0 }"
   >
@@ -21,7 +21,7 @@
 
       <!-- Hamburger menu icon (visible on mobile only) -->
       <div class="hamburger-icon">
-        
+
         <button (click)="toggleMobileMenu()"
         type="button"
         class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none"
@@ -43,7 +43,7 @@
         </button>
 
       </div>
-  
+
       <!-- Navigation items in the center -->
       <nav class="nav-items" appClickOutside (clickOutside)="closeDropdown()" [ngClass]="{'open': isMobileMenuOpen}">
         <ul>
@@ -68,9 +68,15 @@
           <li><a href="#">Research</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Resources</a></li>
+          <li [ngClass]="{
+                    'active': activeDropdownItem === 'gallery',
+                    'disabled': activeDropdownItem && activeDropdownItem === 'gallery'
+                  }">
+                <a routerLink="/gallery" (click)="setActiveDropdownItem('gallery'); closedDropdown()">Gallery</a>
+              </li>
         </ul>
       </nav>
-  
+
       <!-- Button on the right -->
       <div class="cta-button">
         <button>Contact Us</button>
@@ -94,8 +100,8 @@
       </div>
 
       <!-- Button on the right -->
-      <div 
-        class="cta-button-mobile" 
+      <div
+        class="cta-button-mobile"
         [hidden]="!isMobileWidth"
         >
         <button (click)="goToContact()">Contact Us</button>
@@ -106,7 +112,7 @@
     <div class="header-content-image-container">
 
       <div class="elipse-image-container">
-        <img 
+        <img
         src="/images/min/full_eclipse_images_2_optimized-min_50.png"
         alt="eclipse montage"
       />
