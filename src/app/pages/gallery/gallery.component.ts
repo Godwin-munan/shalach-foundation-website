@@ -62,48 +62,48 @@ export class GalleryComponent {
   galleryImages: GalleryItem[] = [
     {
       id: 1,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
+      image: '/images/gallery/outreach-group-photo.jpg',
       ...this.communityOutreach
     },
     {
       id: 2,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
-      ...this.educationPrograms
+      image: '/images/gallery/man-with-outreach-items.jpg',
+      ...this.communityOutreach
     },
     {
       id: 3,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
+      image: '/images/gallery/man-helping-with-writting-material.jpg',
       ...this.healthcareServices
     },
     {
       id: 4,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
-      ...this.foodDistribution
+      image: '/images/gallery/man-and-woman-by-the-banner.jpg',
+      ...this.communityOutreach
     },
     {
       id: 5,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
-      ...this.foodDistribution
+      image: '/images/gallery/woman-one-picking-gift.jpg',
+      ...this.healthcareServices
     },
     {
       id: 6,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
-      ...this.educationPrograms
+      image: '/images/gallery/woman-two-handing-out-gift.jpg',
+      ...this.healthcareServices
     },
     {
       id: 7,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
-      ...this.cleanWaterInitiative
+      image: '/images/gallery/woman-one-picking-gift.jpg',
+      ...this.communityOutreach
     },
     {
       id: 8,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
-      ...this.cleanWaterInitiative
+      image: '/images/gallery/woman-two-handing-gift-to-nurse.jpg',
+      ...this.healthcareServices
     },
     {
       id: 9,
-      image: '/images/team/min/doctor-adamaka-min.jpeg',
-      ...this.educationPrograms
+      image: '/images/gallery/men-handing-out-gift.jpg',
+      ...this.communityOutreach
     }
   ];
 
