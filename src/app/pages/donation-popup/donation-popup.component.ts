@@ -25,12 +25,20 @@ export class DonationPopupComponent {
   suggestedAmounts = [5000, 10000, 25000, 50000, 100000];
   selectedAmount: number | null = null;
 
-  bankDetails = {
-    bankName: 'Sample Bank',
-    accountName: 'Shalach Empowerment Foundation',
-    accountNumber: '0123456789',
-    sortCode: '012345'
-  };
+  bankAccounts = [
+    {
+      bankName: 'UBA',
+      accountName: 'Shalach Empowerment Foundation',
+      accountNumber: '1028497609',
+      accountType: 'Naira Account'
+    },
+    {
+      bankName: 'UBA',
+      accountName: 'Shalach Empowerment Foundation',
+      accountNumber: '3004885585',
+      accountType: 'Dollar Account'
+    }
+  ];
 
   showBankDetails = false;
   isProcessing = false;

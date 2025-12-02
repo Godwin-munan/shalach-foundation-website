@@ -13,22 +13,12 @@
     <div *ngIf="!showSuccess">
       <h2>Support Our Cause</h2>
 
-      <!-- Amount Selection -->
+      <!-- Amount Input -->
       <div class="amount-section">
-        <h4>Choose an amount</h4>
-        <div class="suggested-amounts">
-          <button
-            *ngFor="let amount of suggestedAmounts"
-            (click)="selectAmount(amount)"
-            [class.active]="selectedAmount === amount"
-            type="button"
-          >
-            ₦{{ amount | number }}
-          </button>
-        </div>
+        <h4>Donation Amount</h4>
         <input
           type="number"
-          placeholder="Or enter your own amount"
+          placeholder="Enter amount (₦)"
           [(ngModel)]="donorInfo.amount"
           (input)="onCustomAmountChange()"
           min="100"
@@ -82,13 +72,17 @@
       </div>
 
       <!-- Bank Details (if selected) -->
-      <div *ngIf="showBankDetails" class="bank-details">
-        <p><strong>Bank:</strong> {{ bankDetails.bankName }}</p>
-        <p><strong>Account Name:</strong> {{ bankDetails.accountName }}</p>
-        <p>
-          <strong>Account Number:</strong> {{ bankDetails.accountNumber }}
-          <button (click)="copyToClipboard(bankDetails.accountNumber)">📋</button>
-        </p>
+      <div *ngIf="showBankDetails" class="bank-details-container">
+        <h4>Bank Transfer Details</h4>
+        <div *ngFor="let account of bankAccounts" class="bank-details">
+          <p class="account-type">{{ account.accountType }}</p>
+          <p><strong>Bank:</strong> {{ account.bankName }}</p>
+          <p><strong>Account Name:</strong> {{ account.accountName }}</p>
+          <p>
+            <strong>Account Number:</strong> {{ account.accountNumber }}
+            <button (click)="copyToClipboard(account.accountNumber)">📋</button>
+          </p>
+        </div>
       </div>
 
       <!-- Submit -->

@@ -6,7 +6,7 @@
       <div class="hero-content">
         <p class="hero-subtitle">GIVE A HAND TO</p>
         <h1 class="hero-title">make a<br>difference</h1>
-        <button class="donate-btn">Donate Now 🤍</button>
+        <button class="donate-btn" (click)="openDonationPopup()">Donate Now 🤍</button>
       </div>
       <div class="hero-image">
         <div class="hero-image-circle">
@@ -61,7 +61,7 @@
           <p>
             You can make a tax-deductible donation to Shalach Global Empowerment Foundation or offer items to support our mission
           </p>
-          <button class="card-btn donate-card-btn">DONATE NOW</button>
+          <button class="card-btn donate-card-btn" (click)="openDonationPopup()">DONATE NOW</button>
         </div>
 
         <!-- Volunteer Card -->
@@ -81,5 +81,8 @@
       </div>
     </div>
   </div>
+
+  <!-- Donation Popup -->
+  <app-donation-popup *ngIf="showDonationPopup" (closePopup)="closeDonationPopup()"></app-donation-popup>
 
 </section>

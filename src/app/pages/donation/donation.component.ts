@@ -11,6 +11,7 @@ export class DonationComponent {
   selectedAmount: number | null = null;
   customAmount: string = '';
   donationType: 'one-time' | 'monthly' = 'one-time';
+  showDonationPopup: boolean = false;
 
   predefinedAmounts = [25, 50, 100, 250, 500, 1000];
 
@@ -41,5 +42,13 @@ export class DonationComponent {
 
   navigateToTeam(): void {
     this.router.navigate(['/team']);
+  }
+
+  openDonationPopup(): void {
+    this.showDonationPopup = true;
+  }
+
+  closeDonationPopup(): void {
+    this.showDonationPopup = false;
   }
 }
