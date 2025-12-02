@@ -38,6 +38,7 @@ import { DonationPopupComponent } from './pages/donation-popup/donation-popup.co
     BrowserModule,
     AppRoutingModule,
     FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
