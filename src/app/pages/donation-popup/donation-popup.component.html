@@ -1,0 +1,107 @@
+<div class="donation-popup-overlay" (click)="close()">
+  <div class="donation-popup-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="close()">&times;</button>
+
+    <!-- Success State -->
+    <div *ngIf="showSuccess" class="success-message">
+      <h3>Thank you for your donation!</h3>
+      <p>Your support makes a real difference.</p>
+      <button class="btn btn-primary" (click)="resetAndClose()">Close</button>
+    </div>
+
+    <!-- Donation Form -->
+    <div *ngIf="!showSuccess">
+      <h2>Support Our Cause</h2>
+
+      <!-- Amount Selection -->
+      <div class="amount-section">
+        <h4>Choose an amount</h4>
+        <div class="suggested-amounts">
+          <button
+            *ngFor="let amount of suggestedAmounts"
+            (click)="selectAmount(amount)"
+            [class.active]="selectedAmount === amount"
+            type="button"
+          >
+            ₦{{ amount | number }}
+          </button>
+        </div>
+        <input
+          type="number"
+          placeholder="Or enter your own amount"
+          [(ngModel)]="donorInfo.amount"
+          (input)="onCustomAmountChange()"
+          min="100"
+        />
+      </div>
+
+      <!-- Donor Info -->
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="Full Name"
+          [(ngModel)]="donorInfo.fullName"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="donorInfo.email"
+          required
+        />
+        <input
+          type="tel"
+          placeholder="Phone (optional)"
+          [(ngModel)]="donorInfo.phone"
+        />
+      </div>
+
+      <!-- Payment Method -->
+      <div class="payment-methods">
+        <h4>Payment Method</h4>
+        <label>
+          <input
+            type="radio"
+            name="payment"
+            value="online"
+            [(ngModel)]="donorInfo.paymentMethod"
+            (change)="selectPaymentMethod('online')"
+          />
+          Online (Paystack)
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="payment"
+            value="bank-transfer"
+            [(ngModel)]="donorInfo.paymentMethod"
+            (change)="selectPaymentMethod('bank-transfer')"
+          />
+          Bank Transfer
+        </label>
+      </div>
+
+      <!-- Bank Details (if selected) -->
+      <div *ngIf="showBankDetails" class="bank-details">
+        <p><strong>Bank:</strong> {{ bankDetails.bankName }}</p>
+        <p><strong>Account Name:</strong> {{ bankDetails.accountName }}</p>
+        <p>
+          <strong>Account Number:</strong> {{ bankDetails.accountNumber }}
+          <button (click)="copyToClipboard(bankDetails.accountNumber)">📋</button>
+        </p>
+      </div>
+
+      <!-- Submit -->
+      <button
+        class="btn btn-primary"
+        (click)="submitDonation()"
+        [disabled]="!isFormValid() || isProcessing"
+      >
+        <span *ngIf="isProcessing">Processing...</span>
+        <span *ngIf="!isProcessing">
+          {{ donorInfo.paymentMethod === 'online' ? 'Pay Now' : 'Submit' }}
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

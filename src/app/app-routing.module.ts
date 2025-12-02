@@ -4,6 +4,7 @@ import { LandingComponent } from './layout/landing/landing/landing.component';
 import { TeamComponent } from './pages/team/team.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
+import { DonationPopupComponent } from './pages/donation-popup/donation-popup.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'gallery',
     component: GalleryComponent
   },
+      {
+    path: 'donation-popup',
+    component: DonationPopupComponent
+  },
   {
     path: '**',
     redirectTo: ''
@@ -30,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, 
+  imports: [RouterModule.forRoot(routes,
     {
       anchorScrolling: 'enabled',
       onSameUrlNavigation: 'reload'

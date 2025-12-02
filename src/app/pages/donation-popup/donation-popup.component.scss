@@ -1,0 +1,107 @@
+.donation-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.donation-popup-content {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+.amount-section, .form-group, .payment-methods {
+  margin-bottom: 20px;
+}
+
+.suggested-amounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.suggested-amounts button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.suggested-amounts button.active {
+  background: #ec4899;
+  color: white;
+  border-color: #ec4899;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.payment-methods label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.bank-details {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary {
+  background: #ec4899;
+  color: white;
+}
+
+.btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.success-message {
+  text-align: center;
+}
+
+.success-message h3 {
+  color: #10b981;
+}
