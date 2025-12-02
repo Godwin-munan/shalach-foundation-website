@@ -14,6 +14,7 @@ import { OverviewComponent } from './pages/overview/overview.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { DonationComponent } from './pages/donation/donation.component';
 import { CommonModule } from '@angular/common';
+import { DonationPopupComponent } from './pages/donation-popup/donation-popup.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     TeamComponent,
     OverviewComponent,
     GalleryComponent,
-    DonationComponent
+    DonationComponent,
+    DonationPopupComponent
   ],
   imports: [
     CommonModule,
