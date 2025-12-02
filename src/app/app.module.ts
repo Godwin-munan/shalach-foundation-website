@@ -12,7 +12,9 @@ import { ClickOutsideDirectiveDirective } from './directives/click-outside-direc
 import { TeamComponent } from './pages/team/team.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
+import { DonationComponent } from './pages/donation/donation.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { CommonModule } from '@angular/common';
     ClickOutsideDirectiveDirective,
     TeamComponent,
     OverviewComponent,
-    GalleryComponent
+    GalleryComponent,
+    DonationComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

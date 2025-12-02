@@ -74,6 +74,12 @@
                   }">
                 <a routerLink="/gallery" (click)="setActiveDropdownItem('gallery'); closedDropdown()">Gallery</a>
               </li>
+          <li [ngClass]="{
+                    'active': activeDropdownItem === 'donation',
+                    'disabled': activeDropdownItem && activeDropdownItem === 'donation'
+                  }">
+                <a routerLink="/donation" (click)="setActiveDropdownItem('donation'); closedDropdown()">Donate</a>
+              </li>
         </ul>
       </nav>
 

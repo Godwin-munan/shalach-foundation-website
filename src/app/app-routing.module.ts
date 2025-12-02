@@ -4,6 +4,7 @@ import { LandingComponent } from './layout/landing/landing/landing.component';
 import { TeamComponent } from './pages/team/team.component';
 import { OverviewComponent } from './pages/overview/overview.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
+import { DonationComponent } from './pages/donation/donation.component';
 
 const routes: Routes = [
   {
@@ -19,9 +20,13 @@ const routes: Routes = [
     path: 'overview',
     component: OverviewComponent
   },
-    {
+  {
     path: 'gallery',
     component: GalleryComponent
+  },
+  {
+    path: 'donation',
+    component: DonationComponent
   },
   {
     path: '**',
