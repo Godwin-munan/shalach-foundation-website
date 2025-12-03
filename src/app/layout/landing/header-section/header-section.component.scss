@@ -167,24 +167,27 @@
   height: inherit;
 
 
-  background-color: var(--app-white-color);         
-  color: var(--app-black-color);                    
-  border: 1px solid var(--button-background-color); 
+  background-color: var(--app-white-color);
+  color: var(--app-black-color);
+  border: 1px solid var(--button-background-color);
 
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.2s ease; 
+  transition: all 0.3s ease;
+  transform: scale(1);
 }
 
 .cta-button button:hover {
-  // background-color: var(--app-white-color);         
-  // color: var(--app-black-color);                    
-  // border: 1px solid var(--button-background-color); 
-  
-  background-color: var(--button-background-color); 
+  // background-color: var(--app-white-color);
+  // color: var(--app-black-color);
+  // border: 1px solid var(--button-background-color);
+
+  background-color: var(--button-background-color);
   color: var(--app-white-color);
   border: none;
-  
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(3, 96, 217, 0.3);
+
 }
 
 
@@ -197,8 +200,8 @@
 .sub-header-content-container {
   display: flex;
   // justify-content: center;
-  // align-items: center;   
-  flex: 1;     
+  // align-items: center;
+  flex: 1;
   margin: var(--container-centered);
   max-width: var(--header-container-width);
   width: 100%;
@@ -212,6 +215,18 @@
   //max-width: var(--content-title-container);
   width: 45%;
   margin: 75px 0 20px 0;
+  animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .header-content-image-container {
@@ -222,6 +237,18 @@
   width: 100%;
   height: auto;
   margin: 60px 0 0 0;
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .elipse-image-container {

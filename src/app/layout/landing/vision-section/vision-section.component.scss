@@ -12,6 +12,18 @@
   background-color: var(--app-primary-color);
   height: 97px;
   margin: 0 0 50px 0;
+  animation: slideInDown 0.8s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .vision-header-container h2 {
@@ -39,28 +51,60 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   background-color: var(--app-white-background-color);
   padding: 50px 30px;
+  transition: all 0.4s ease;
+}
+
+.vision-card-left-container:hover,
+.vision-card-right-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .vision-card-right-container{
   margin-right: 300px;
   background-color: var(--app-white-background-color);
   color: var(--app-purple-color);
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .vision-card-left-container {
   margin-left: 300px;
   background-color: var(--app-vision-card-background-color);
   color: var(--app-white-color);
+  animation: fadeInUp 1s ease-out 0.1s both;
 }
 
 .vision-icon-container {
-  position: relative;   
-  width: 80px;        
+  position: relative;
+  width: 80px;
   height: 80px;
   display: flex;
-  justify-content: center; // Centers content horizontally 
+  justify-content: center; // Centers content horizontally
   align-items: center;     // Centers content vertically
   margin-bottom: 10px;
+  animation: scaleIn 0.6s ease-out 0.5s both;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 // .vision-icon-right-background {

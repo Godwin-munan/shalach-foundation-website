@@ -31,6 +31,18 @@
   width: 650px;
   align-self: flex-start;
   padding: 20px;
+  animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .our-mission-card  .our-mission-card-content {
@@ -39,6 +51,12 @@
   background-color: #E4DCFC;
   color: hsl(255, 48%, 26%);
   padding: 50px;
+  transition: all 0.3s ease;
+}
+
+.our-mission-card  .our-mission-card-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -67,6 +85,18 @@ br.custom-br {
 .our-mission-image {
   width: 40%;
   align-self: center;
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 
@@ -98,7 +128,18 @@ br.custom-br {
   align-items: center;
   justify-content: center;
   padding: 50px 20px 0 20px;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .what-who-why-image {
@@ -116,10 +157,31 @@ br.custom-br {
 .core-value-container {
   color: var(--app-purple-color);
   padding: 50px 20px;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .core-value-header {
-  
+  animation: slideInDown 0.8s ease-out 0.6s both;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .core-value-header h3 {
@@ -134,14 +196,44 @@ br.custom-br {
   width: 100%;
 }
 
-.core-values-cards-left, 
+.core-values-cards-left,
 .core-values-cards-right {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   gap: 20px;
   width: calc(50% - 50px);
-  
+
+}
+
+.core-values-cards-left {
+  animation: slideInLeft 0.8s ease-out 0.7s both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.core-values-cards-right {
+  animation: slideInRight 0.8s ease-out 0.7s both;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .core-values-cards-left,
@@ -161,6 +253,12 @@ br.custom-br {
   background-color: var(--app-white-background-color);
   border-radius: 10px;
   padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.excellence-passion-integrity-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .excellence-passion-integrity-cards h3 {
@@ -172,6 +270,12 @@ br.custom-br {
   background-color: var(--app-white-background-color);
   border-radius: 10px;
   padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.collaboration-Advocacy-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .collaboration-Advocacy-cards h3 {

@@ -12,6 +12,8 @@
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
 @mixin visible-content-style {
@@ -109,6 +111,16 @@
   margin: 0 auto;
   padding: 50px 125px 110px 125px;
   z-index: 2;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .goals-header-container {
@@ -116,6 +128,18 @@
   margin: 0 auto;
   text-align: center;
   padding-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .goals-header-title-container {
@@ -155,12 +179,46 @@
   background-image: url('/images/min/Rectangle_104-doctor_testing_a_patient-min.png');
   @include card-container-style;
   margin-right: 30px;
+  animation: slideInLeft 0.8s ease-out 0.4s both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.goals-card-left-container:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .goals-card-right-container {
   background-image: url('/images/min/Rectangle_105-a_man_helping_a_physically_challenge_person-min.png');
   @include card-container-style;
   margin-left: 30px;
+  animation: slideInRight 0.8s ease-out 0.4s both;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.goals-card-right-container:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .goal-left-visible-content-container {
