@@ -1,322 +1,36 @@
+// ─── OVERLAY & POPUP CONTAINER ────────────────────────────────────
 .donation-popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease-out;
+  justify-content: center;
+  z-index: 9999;
   backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
 }
 
 .donation-popup-content {
   background: white;
-  border-radius: 20px;
-  padding: 40px;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
   width: 90%;
-  max-width: 550px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.4s ease-out;
-
-  @media (max-width: 640px) {
-    padding: 30px 24px;
-  }
-
-  h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 24px;
-    font-family: var(--outfit-font);
-    text-align: center;
-
-    @media (max-width: 640px) {
-      font-size: 26px;
-    }
-  }
-
-  h4 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 16px;
-    font-family: var(--outfit-font);
-  }
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
 }
 
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #f5f5f5;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  color: #666;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  line-height: 1;
-
-  &:hover {
-    background: #e63946;
-    color: white;
-    transform: rotate(90deg);
-  }
-}
-
-// Amount Section
-.amount-section {
-  margin-bottom: 30px;
-
-  h4 {
-    margin-bottom: 16px;
-  }
-
-  input[type="number"] {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    font-size: 15px;
-    font-family: var(--outfit-font);
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-
-    &:focus {
-      outline: none;
-      border-color: #e63946;
-      box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
-    }
-
-    &::placeholder {
-      color: #999;
-    }
-  }
-}
-
-// Form Group
-.form-group {
-  margin-bottom: 24px;
-
-  input {
-    width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    font-size: 15px;
-    font-family: var(--outfit-font);
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-
-    &:focus {
-      outline: none;
-      border-color: #e63946;
-      box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
-    }
-
-    &::placeholder {
-      color: #999;
-    }
-  }
-}
-
-// Payment Methods
-.payment-methods {
-  margin-bottom: 24px;
-
-  h4 {
-    margin-bottom: 12px;
-  }
-
-  label {
-    display: flex;
-    align-items: center;
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    background: #f9f9f9;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
-    font-family: var(--outfit-font);
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #fff;
-      border-color: #e63946;
-    }
-
-    input[type="radio"] {
-      width: 20px;
-      height: 20px;
-      margin-right: 12px;
-      accent-color: #e63946;
-    }
-  }
-}
-
-// Bank Details Container
-.bank-details-container {
-  margin: 20px 0;
-
-  h4 {
-    margin-bottom: 16px;
-    color: #1a1a1a;
-  }
-}
-
-// Bank Details Cards
-.bank-details {
-  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  border: 2px solid #e0e0e0;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: #e63946;
-    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.1);
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  .account-type {
-    font-size: 14px;
-    font-weight: 700;
-    color: #e63946;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  p {
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: #333;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    strong {
-      color: #1a1a1a;
-      font-weight: 600;
-    }
-
-    button {
-      margin-left: 8px;
-      background: #e63946;
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background: #d62839;
-        transform: scale(1.1);
-      }
-    }
-  }
-}
-
-// Buttons
-.btn {
-  padding: 16px 32px;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  width: 100%;
-  font-family: var(--outfit-font);
-  transition: all 0.3s ease;
-  margin-top: 10px;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #e63946 0%, #d62839 100%);
-  color: white;
-  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.3);
-
-  &:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(230, 57, 70, 0.4);
-  }
-
-  &:active:not(:disabled) {
-    transform: translateY(0);
-  }
-
-  &:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    box-shadow: none;
-  }
-}
-
-// Success Message
-.success-message {
-  text-align: center;
-  padding: 40px 20px;
-  animation: scaleIn 0.5s ease-out;
-
-  h3 {
-    font-size: 28px;
-    font-weight: 700;
-    color: #10b981;
-    margin-bottom: 16px;
-    font-family: var(--outfit-font);
-
-    &::before {
-      content: '✓';
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      line-height: 60px;
-      background: #10b981;
-      color: white;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      font-size: 36px;
-    }
-  }
-
-  p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 30px;
-    line-height: 1.6;
-  }
-}
-
-// Animations
+// ─── ANIMATIONS ───────────────────────────────────────────────────
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -330,32 +44,386 @@
   }
 }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-// Scrollbar styling
-.donation-popup-content::-webkit-scrollbar {
-  width: 8px;
-}
-
-.donation-popup-content::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.donation-popup-content::-webkit-scrollbar-thumb {
-  background: #e63946;
-  border-radius: 10px;
+// ─── CLOSE BUTTON ─────────────────────────────────────────────────
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
 
   &:hover {
-    background: #d62839;
+    color: #333;
+  }
+}
+
+// ─── HEADER ───────────────────────────────────────────────────────
+h2 {
+  margin: 0 0 0.5rem;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+// ─── SUCCESS MESSAGE ──────────────────────────────────────────────
+.success-message {
+  text-align: center;
+  padding: 2rem 0;
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #10b981;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 0 auto 1rem;
+    animation: scaleIn 0.5s ease;
+  }
+
+  h3 {
+    color: #10b981;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// ─── AMOUNT SECTION ───────────────────────────────────────────────
+.amount-section {
+  margin-bottom: 1.5rem;
+
+  h4 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.1rem;
+  }
+}
+
+.suggested-amounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.amount-btn {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+  }
+
+  &.selected {
+    border-color: #3b82f6;
+    background: #3b82f6;
+    color: white;
+  }
+}
+
+// ─── FORM CONTROLS ────────────────────────────────────────────────
+.form-group {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #374151;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+  }
+
+  &.is-invalid {
+    border-color: #ef4444;
+  }
+}
+
+.invalid-feedback {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+// ─── CHECKBOX ─────────────────────────────────────────────────────
+.form-check {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+
+  .form-check-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  .form-check-label {
+    color: #374151;
+    cursor: pointer;
+  }
+}
+
+// ─── PAYMENT METHODS ──────────────────────────────────────────────
+.payment-methods {
+  margin: 1.5rem 0;
+
+  h4 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.1rem;
+  }
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+  }
+
+  input[type="radio"] {
+    margin-right: 0.75rem;
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked ~ .payment-label {
+    color: #3b82f6;
+    font-weight: 600;
+  }
+
+  .payment-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #374151;
+  }
+}
+
+// ─── BANK DETAILS ─────────────────────────────────────────────────
+.bank-details-container {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+
+  h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .bank-info-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.bank-details {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .account-type {
+    font-weight: 600;
+    color: #3b82f6;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .account-info {
+    p {
+      margin: 0.5rem 0;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+  }
+
+  .account-number {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+      font-family: monospace;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+  }
+}
+
+.copy-btn {
+  background: #eff6ff;
+  border: 1px solid #3b82f6;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #3b82f6;
+    transform: scale(1.1);
+  }
+}
+
+// ─── ALERTS ───────────────────────────────────────────────────────
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+
+  &.alert-danger {
+    background: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #991b1b;
+  }
+}
+
+// ─── BUTTONS ──────────────────────────────────────────────────────
+.btn {
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &.btn-primary {
+    background: #3b82f6;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    &:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+  }
+
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+.security-note {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+// ─── LOADING STATE ────────────────────────────────────────────────
+.loading-container {
+  text-align: center;
+  padding: 3rem 2rem;
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e5e7eb;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 1rem;
+  }
+
+  p {
+    color: #666;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// ─── RESPONSIVE ───────────────────────────────────────────────────
+@media (max-width: 640px) {
+  .donation-popup-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .suggested-amounts {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

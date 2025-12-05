@@ -1,0 +1,104 @@
+<div class="callback-container">
+  <!-- Loading State -->
+  <div *ngIf="loading" class="status-card loading-state">
+    <div class="spinner"></div>
+    <h2>Verifying your payment</h2>
+    <p>Please wait while we confirm your donation...</p>
+    <p class="reference-info">Reference: <strong>{{ reference }}</strong></p>
+  </div>
+
+  <!-- Success State -->
+  <div *ngIf="paymentStatus === 'success'" class="status-card success-state">
+    <div class="status-icon success">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+    </div>
+
+    <h2>Thank You for Your Donation!</h2>
+    <p class="lead">Your payment was successful</p>
+
+    <div class="donation-details card">
+      <h3>Donation Details</h3>
+      <div class="detail-row">
+        <span class="label">Reference:</span>
+        <strong>{{ donationDetails?.reference }}</strong>
+      </div>
+      <div class="detail-row">
+        <span class="label">Amount:</span>
+        <strong>{{ donationDetails?.currency }} {{ donationDetails?.amount | number:'1.2-2' }}</strong>
+      </div>
+      <div class="detail-row" *ngIf="donationDetails?.payment_channel">
+        <span class="label">Payment Method:</span>
+        <strong>{{ donationDetails?.payment_channel | titlecase }}</strong>
+      </div>
+      <div class="detail-row" *ngIf="donationDetails?.paid_at">
+        <span class="label">Date & Time:</span>
+        <strong>{{ donationDetails?.paid_at | date:'medium' }}</strong>
+      </div>
+    </div>
+
+    <p class="receipt-info">
+      📧 A receipt has been sent to your email address.
+    </p>
+
+    <div class="button-group">
+      <button class="btn btn-primary" (click)="goHome()">
+        <span>Back to Home</span>
+      </button>
+      <button class="btn btn-secondary" (click)="downloadReceipt()">
+        <span>View Receipt</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Failed State -->
+  <div *ngIf="paymentStatus === 'failed'" class="status-card error-state">
+    <div class="status-icon error">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </svg>
+    </div>
+
+    <h2>Payment Failed</h2>
+    <p class="lead">{{ errorMessage || 'Your payment could not be processed' }}</p>
+
+    <div class="help-info">
+      <p>If you were charged, please contact our support team with your reference number.</p>
+      <p class="reference-info">Reference: <strong>{{ reference }}</strong></p>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-primary" (click)="tryAgain()">
+        <span>Try Again</span>
+      </button>
+      <button class="btn btn-secondary" (click)="goHome()">
+        <span>Go Home</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Timeout State -->
+  <div *ngIf="paymentStatus === 'timeout'" class="status-card warning-state">
+    <div class="status-icon warning">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+      </svg>
+    </div>
+
+    <h2>Verification Timeout</h2>
+    <p class="lead">{{ errorMessage }}</p>
+
+    <div class="help-info">
+      <p>We're still processing your payment. If payment was deducted, you will receive a confirmation email shortly.</p>
+      <p class="reference-info">Reference: <strong>{{ reference }}</strong></p>
+      <p>For immediate assistance, please contact our support team.</p>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-primary" (click)="goHome()">
+        <span>Back to Home</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -85,4 +85,94 @@
   <!-- Donation Popup -->
   <app-donation-popup *ngIf="showDonationPopup" (closePopup)="closeDonationPopup()"></app-donation-popup>
 
+  <!-- Payment Result Modal (Shows after Paystack redirect) -->
+  <div *ngIf="showPaymentResult" class="payment-result-overlay" (click)="closePaymentResult()">
+    <div class="payment-result-modal" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closePaymentResult()">&times;</button>
+
+      <!-- Verifying State -->
+      <div *ngIf="isVerifying" class="result-content verifying">
+        <div class="spinner"></div>
+        <h2>Verifying Payment</h2>
+        <p>Please wait while we confirm your donation...</p>
+      </div>
+
+      <!-- Success State -->
+      <div *ngIf="!isVerifying && paymentStatus === 'success'" class="result-content success">
+        <div class="status-icon success">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+        </div>
+
+        <h2>Thank You!</h2>
+        <p class="lead">Your donation was successful</p>
+
+        <div class="donation-summary">
+          <div class="summary-row">
+            <span>Amount:</span>
+            <strong>{{ donationDetails?.currency }} {{ donationDetails?.amount | number:'1.2-2' }}</strong>
+          </div>
+          <div class="summary-row">
+            <span>Reference:</span>
+            <strong>{{ donationDetails?.reference }}</strong>
+          </div>
+          <div class="summary-row" *ngIf="donationDetails?.payment_channel">
+            <span>Payment Method:</span>
+            <strong>{{ donationDetails?.payment_channel | titlecase }}</strong>
+          </div>
+        </div>
+
+        <p class="email-notice">📧 A receipt has been sent to your email</p>
+
+        <div class="action-buttons">
+          <button class="btn btn-primary" (click)="closePaymentResult()">Done</button>
+          <button class="btn btn-secondary" (click)="downloadReceipt()">View Receipt</button>
+        </div>
+      </div>
+
+      <!-- Failed State -->
+      <div *ngIf="!isVerifying && paymentStatus === 'failed'" class="result-content failed">
+        <div class="status-icon failed">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </div>
+
+        <h2>Payment Failed</h2>
+        <p class="lead">{{ errorMessage }}</p>
+
+        <p class="help-text">
+          If you were charged, please contact our support team.
+        </p>
+
+        <div class="action-buttons">
+          <button class="btn btn-primary" (click)="tryAgain()">Try Again</button>
+          <button class="btn btn-secondary" (click)="closePaymentResult()">Close</button>
+        </div>
+      </div>
+
+      <!-- Timeout State -->
+      <div *ngIf="!isVerifying && paymentStatus === 'timeout'" class="result-content timeout">
+        <div class="status-icon timeout">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+          </svg>
+        </div>
+
+        <h2>Verification Timeout</h2>
+        <p class="lead">{{ errorMessage }}</p>
+
+        <p class="help-text">
+          We're still processing your payment. If payment was deducted,
+          you will receive a confirmation email shortly.
+        </p>
+
+        <div class="action-buttons">
+          <button class="btn btn-primary" (click)="closePaymentResult()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>

@@ -15,8 +15,11 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { DonationComponent } from './pages/donation/donation.component';
 import { CommonModule } from '@angular/common';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DonationPopupComponent } from './pages/donation-popup/donation-popup.component';
+import { DonationService } from './services/donation.service';
+import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { DonationCallbackComponent } from './pages/donation-callback/donation-callback.component';
 
 @NgModule({
   declarations: [
@@ -32,15 +35,19 @@ import { DonationPopupComponent } from './pages/donation-popup/donation-popup.co
     GalleryComponent,
     DonationComponent,
     DonationPopupComponent,
+    DonationCallbackComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-    
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(withInterceptorsFromDi())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
